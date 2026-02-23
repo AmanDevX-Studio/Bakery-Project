@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FreshBaket - Login</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ========== LOGIN PAGE - FULL SCREEN ========== -->
+  <div class="login-page">
+    <div class="login-container">
+      
+      <div class="login-card">
+        
+        <!-- LEFT SIDE - BRANDING -->
+        <div class="login-brand">
+          <div class="brand-logo">
+            <svg viewBox="0 0 100 100" width="60" height="60">
+              <path fill="white" d="M50 10c-8 0-15 4-20 10-3 4-5 9-5 15 0 11 6 20 15 25 4 2 7 3 10 3s6-1 10-3c9-5 15-14 15-25 0-6-2-11-5-15-5-6-12-10-20-10z"/>
+              <circle fill="white" cx="35" cy="35" r="5"/>
+              <circle fill="white" cx="65" cy="35" r="5"/>
+            </svg>
+          </div>
+          
+          <div class="brand-content">
+            <h1>
+              FreshBaket
+              <span>Fresh From The Oven</span>
+            </h1>
+            
+            <ul class="brand-features">
+              <li>
+                <i class="fas fa-check-circle"></i>
+                <span>Order fresh bakery items online</span>
+              </li>
+              <li>
+                <i class="fas fa-truck"></i>
+                <span>Free delivery in Hisar</span>
+              </li>
+              <li>
+                <i class="fas fa-gift"></i>
+                <span>Special discounts for members</span>
+              </li>
+              <li>
+                <i class="fas fa-clock"></i>
+                <span>Track your order in real-time</span>
+              </li>
+            </ul>
+            
+            <div class="brand-testimonial">
+              <i class="fas fa-quote-right"></i>
+              <p>"Best bakery in Hisar! Fresh sourdough and cakes are amazing. The loyalty program saves me a lot."</p>
+              <div class="testimonial-author">
+                <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Customer">
+                <div>
+                  <h5>Priya Sharma</h5>
+                  <p>Regular Customer</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- RIGHT SIDE - FORMS -->
+        <div class="login-forms">
+          
+          <!-- Toggle Buttons -->
+          <div class="form-toggle">
+            <button class="toggle-btn active" onclick="showLogin()" id="loginToggle">Login</button>
+            <button class="toggle-btn" onclick="showRegister()" id="registerToggle">Register</button>
+          </div>
+          
+          <!-- LOGIN FORM -->
+          <div class="login-form active" id="loginForm">
+            <div class="form-header">
+              <h2>Welcome Back!</h2>
+              <p>Login to access your account</p>
+            </div>
+            
+            <form onsubmit="handleLogin(event)">
+              <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Address" id="loginEmail" required>
+              </div>
+              
+              <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" id="loginPassword" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword('loginPassword', this)"></i>
+              </div>
+              
+              <div class="forgot-password">
+                <a href="#">Forgot Password?</a>
+              </div>
+              
+              <button type="submit" class="login-btn">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+              </button>
+              
+              <div class="form-checkbox">
+                <input type="checkbox" id="rememberMe">
+                <label for="rememberMe">Remember me</label>
+              </div>
+            </form>
+            
+            <div class="social-login">
+              <p>Or login with</p>
+              <div class="social-icons">
+                <div class="social-icon"><i class="fab fa-google"></i></div>
+                <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-icon"><i class="fab fa-apple"></i></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- REGISTER FORM -->
+          <div class="register-form" id="registerForm">
+            <div class="form-header">
+              <h2>Create Account</h2>
+              <p>Join FreshBaket family</p>
+            </div>
+            
+            <form onsubmit="handleRegister(event)">
+              <div class="form-group">
+                <i class="fas fa-user"></i>
+                <input type="text" placeholder="Full Name" id="regName" required>
+              </div>
+              
+              <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="Email Address" id="regEmail" required>
+              </div>
+              
+              <div class="form-group">
+                <i class="fas fa-phone"></i>
+                <input type="tel" placeholder="Phone Number" id="regPhone" required>
+              </div>
+              
+              <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Password" id="regPassword" onkeyup="checkPasswordStrength()" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword('regPassword', this)"></i>
+              </div>
+              
+              <!-- Password Strength Indicator -->
+              <div class="password-strength" id="passwordStrength">
+                <div class="strength-bar"><div id="strengthBar"></div></div>
+                <div class="strength-text" id="strengthText">Enter password</div>
+              </div>
+              
+              <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" placeholder="Confirm Password" id="regConfirmPassword" required>
+                <i class="fas fa-eye toggle-password" onclick="togglePassword('regConfirmPassword', this)"></i>
+              </div>
+              
+              <div class="form-checkbox">
+                <input type="checkbox" id="terms" required>
+                <label for="terms">I agree to the <a href="#">Terms & Conditions</a></label>
+              </div>
+              
+              <button type="submit" class="login-btn">
+                <i class="fas fa-user-plus"></i>
+                Register
+              </button>
+            </form>
+            
+            <div class="social-login">
+              <p>Or register with</p>
+              <div class="social-icons">
+                <div class="social-icon"><i class="fab fa-google"></i></div>
+                <div class="social-icon"><i class="fab fa-facebook-f"></i></div>
+                <div class="social-icon"><i class="fab fa-apple"></i></div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Success Message -->
+          <div class="success-message" id="successMessage">
+            <i class="fas fa-check-circle"></i>
+            <h3 id="successTitle">Success!</h3>
+            <p id="successText">Action completed successfully</p>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- JavaScript -->
+  <script>
+    // Toggle between Login and Register forms
+    function showLogin() {
+      document.getElementById('loginForm').classList.add('active');
+      document.getElementById('registerForm').classList.remove('active');
+      document.getElementById('loginToggle').classList.add('active');
+      document.getElementById('registerToggle').classList.remove('active');
+    }
+    
+    function showRegister() {
+      document.getElementById('registerForm').classList.add('active');
+      document.getElementById('loginForm').classList.remove('active');
+      document.getElementById('registerToggle').classList.add('active');
+      document.getElementById('loginToggle').classList.remove('active');
+    }
+    
+    // Toggle Password Visibility
+    function togglePassword(inputId, icon) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
+    }
+    
+    // Password Strength Checker
+    function checkPasswordStrength() {
+      const password = document.getElementById('regPassword').value;
+      const strengthBar = document.getElementById('strengthBar');
+      const strengthText = document.getElementById('strengthText');
+      
+      let strength = 0;
+      
+      if (password.length >= 8) strength++;
+      if (password.match(/[a-z]+/)) strength++;
+      if (password.match(/[A-Z]+/)) strength++;
+      if (password.match(/[0-9]+/)) strength++;
+      if (password.match(/[$@#&!]+/)) strength++;
+      
+      strengthBar.className = '';
+      
+      if (password.length === 0) {
+        strengthBar.style.width = '0%';
+        strengthText.textContent = 'Enter password';
+      } else if (strength <= 2) {
+        strengthBar.classList.add('weak');
+        strengthText.textContent = 'Weak password';
+      } else if (strength <= 4) {
+        strengthBar.classList.add('medium');
+        strengthText.textContent = 'Medium password';
+      } else {
+        strengthBar.classList.add('strong');
+        strengthText.textContent = 'Strong password';
+      }
+    }
+    
+    // Handle Login
+    function handleLogin(event) {
+      event.preventDefault();
+      
+      const email = document.getElementById('loginEmail').value;
+      const password = document.getElementById('loginPassword').value;
+      
+      // Simple validation
+      if (!email || !password) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      // Show success message
+      showSuccess('Login Successful!', 'Redirecting to dashboard...');
+      
+      // Simulate redirect after 2 seconds
+      setTimeout(() => {
+        window.location.href = '#Home'; // Change to your dashboard URL
+      }, 2000);
+    }
+    
+    // Handle Register
+    function handleRegister(event) {
+      event.preventDefault();
+      
+      const name = document.getElementById('regName').value;
+      const email = document.getElementById('regEmail').value;
+      const phone = document.getElementById('regPhone').value;
+      const password = document.getElementById('regPassword').value;
+      const confirm = document.getElementById('regConfirmPassword').value;
+      const terms = document.getElementById('terms').checked;
+      
+      // Validation
+      if (!name || !email || !phone || !password || !confirm) {
+        alert('Please fill in all fields');
+        return;
+      }
+      
+      if (password !== confirm) {
+        alert('Passwords do not match');
+        return;
+      }
+      
+      if (!terms) {
+        alert('Please accept Terms & Conditions');
+        return;
+      }
+      
+      if (phone.length < 10) {
+        alert('Please enter valid phone number');
+        return;
+      }
+      
+      // Show success message
+      showSuccess('Registration Successful!', 'Welcome to FreshBaket family!');
+      
+      // Switch to login after 2 seconds
+      setTimeout(() => {
+        showLogin();
+        document.getElementById('successMessage').classList.remove('show');
+      }, 2000);
+    }
+    
+    // Show Success Message
+    function showSuccess(title, message) {
+      document.getElementById('successTitle').textContent = title;
+      document.getElementById('successText').textContent = message;
+      document.getElementById('successMessage').classList.add('show');
+      
+      // Auto hide after 3 seconds
+      setTimeout(() => {
+        document.getElementById('successMessage').classList.remove('show');
+      }, 3000);
+    }
+    
+    // For demo: Pre-fill login form with demo credentials
+    window.onload = function() {
+      // Optional: Pre-fill for demo
+      // document.getElementById('loginEmail').value = 'demo@freshbaket.com';
+      // document.getElementById('loginPassword').value = 'demo123';
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,1346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FreshBaket · freshly baked daily</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <!-- main Logo (smooth branding) -->
+        <div class="logo" title="FreshBaket home">
+          <img src="/assets/bread (1).png" alt="FreshBaket loaf logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="#Home" title="Home">Home</a></li>
+          <li><a href="#About" title="Our story">About</a></li>
+          <li><a href="#Product" title="Fresh treats">Product</a></li>
+          <li><a href="#Gallery" title="Sweet moments">Gallery</a></li>
+          <li><a href="#Contact" title="Get in touch">Contact us</a></li>
+        </ul>
+        <button class="H-btn">
+          <a href="login.html" target="_blank" rel="noopener noreferrer"
+            >Sign in / Register</a
+          >
+        </button>
+      </nav>
+    </header>
+    <!-- end header -->
+
+    <main>
+      <!-- ========== HERO SECTION WITH SLIDESHOW ========== -->
+      <section class="Hero" id="Home">
+        <div class="container">
+          <!-- LEFT SIDE - CONTENT -->
+          <div class="left-side">
+            <h3>✨ welcome to our bakery</h3>
+            <h1>Bake<span>House</span></h1>
+
+            <p>
+              <strong>FreshBaket</strong> — where every loaf, every cake, and
+              every delicate pastry is thoughtfully handcrafted with local
+              flour, organic eggs, and pure butter. We rise early so you can
+              enjoy the simple pleasure of real bread.
+            </p>
+
+            <p>
+              <i
+                class="fas fa-heart"
+                style="color: #d2691e; margin-right: 5px"
+              ></i>
+              Our bakery is a place of warmth: the scent of cinnamon rolls in
+              the morning, the first bite of a still-warm croissant, and the
+              smiles when you share our treats with the people you love.
+            </p>
+
+            <!-- Buttons with Icons -->
+            <div class="left-btn">
+              <button><i class="fas fa-book-open"></i> Our Story</button>
+              <button><i class="fas fa-shopping-cart"></i> Order Online</button>
+            </div>
+
+            <!-- Customer Avatars -->
+            <div class="testonomial">
+              <h3>❤️ kind words</h3>
+              <div class="item-1">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Happy customer"
+                />
+              </div>
+              <div class="item-1">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Happy customer"
+                />
+              </div>
+              <div class="item-1">
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="Happy customer"
+                />
+              </div>
+              <div class="item-1">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Happy customer"
+                />
+              </div>
+              <span style="color: #7b5e4c; font-size: 0.9rem; margin-left: 5px"
+                >+2k happy customers</span
+              >
+            </div>
+          </div>
+
+          <div class="right-side">
+            <div class="floating-badge">
+              <i class="fas fa-crown"></i>
+              <div>
+                <span>Bakery of the Year</span><br />
+                <small>2026 - Hisar</small>
+              </div>
+            </div>
+
+            <div class="slideshow-container" id="slideshow">
+              <div class="slide active" id="slide1">
+                <img
+                  src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&auto=format
+"
+                  alt="Fresh Sourdough"
+                />
+                <div class="slide-caption">
+                  <i class="fas fa-bread-slice"></i> Fresh Sourdough Daily
+                </div>
+              </div>
+              <div class="slide" id="slide2">
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&auto=format"
+                  alt="Chocolate Cake"
+                />
+                <div class="slide-caption">
+                  <i class="fas fa-cake"></i> Signature Chocolate Cake
+                </div>
+              </div>
+
+              <div class="slide" id="slide3">
+                <img
+                  src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&auto=format"
+                  alt="Butter Croissants"
+                />
+                <div class="slide-caption">
+                  <i class="fas fa-wheat-alt"></i> French Butter Croissants
+                </div>
+              </div>
+              <div class="slide" id="slide4">
+                <img
+                  src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&auto=format"
+                  alt="Assorted Cookies"
+                />
+                <div class="slide-caption">
+                  <i class="fas fa-cookie-bite"></i> Fresh Baked Cookies
+                </div>
+              </div>
+              <div class="slide" id="slide5">
+                <img
+                  src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=600&auto=format"
+                  alt="Cinnamon Rolls"
+                />
+                <div class="slide-caption">
+                  <i class="fas fa-ice-cream"></i> Cinnamon Rolls with Icing
+                </div>
+              </div>
+              <div class="slide-indicators">
+                <span class="indicator active" onclick="currentSlide(1)"></span>
+                <span class="indicator" onclick="currentSlide(2)"></span>
+                <span class="indicator" onclick="currentSlide(3)"></span>
+                <span class="indicator" onclick="currentSlide(4)"></span>
+                <span class="indicator" onclick="currentSlide(5)"></span>
+              </div>
+            </div>
+
+            <div class="bg-pattern"></div>
+          </div>
+        </div>
+      </section>
+
+      <script>
+        let slideIndex = 1;
+        let slideInterval;
+
+        // Show initial slide
+        showSlides(slideIndex);
+
+        // Auto advance slides every 3 seconds
+        startAutoSlide();
+
+        function startAutoSlide() {
+          slideInterval = setInterval(() => {
+            changeSlide(1);
+          }, 3000);
+        }
+
+        function changeSlide(n) {
+          showSlides((slideIndex += n));
+        }
+
+        function currentSlide(n) {
+          clearInterval(slideInterval);
+          showSlides((slideIndex = n));
+          startAutoSlide();
+        }
+
+        function showSlides(n) {
+          let slides = document.getElementsByClassName("slide");
+          let indicators = document.getElementsByClassName("indicator");
+
+          if (n > slides.length) {
+            slideIndex = 1;
+          }
+          if (n < 1) {
+            slideIndex = slides.length;
+          }
+
+          // Hide all slides
+          for (let i = 0; i < slides.length; i++) {
+            slides[i].classList.remove("active");
+          }
+
+          // Remove active from all indicators
+          for (let i = 0; i < indicators.length; i++) {
+            indicators[i].classList.remove("active");
+          }
+
+          // Show current slide
+          slides[slideIndex - 1].classList.add("active");
+          indicators[slideIndex - 1].classList.add("active");
+        }
+      </script>
+
+      <section class="cards-section">
+        <div class="card">
+          <img src="/Icons/carts.png" alt="easy pickup or delivery" />
+        </div>
+        <div class="card">
+          <img
+            src="/Icons/multiple-users-silhouette.png"
+            alt="baked for community"
+          />
+        </div>
+        <div class="card">
+          <img src="/Icons/search.png" alt="find your favorite" />
+        </div>
+        <div class="card">
+          <img src="/Icons/package.png" alt="freshly packed" />
+        </div>
+      </section>
+      <!-- ========== SECTION 1: TRENDING NOW (HORIZONTAL) ========== -->
+      <section class="product-horizontal-section">
+        <div class="container">
+          <h2 class="section-heading">🔥 Trending Now</h2>
+
+          <div class="horizontal-scroll">
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">HOT</span>
+                <img
+                  src="https://images.unsplash.com/photo-1549931319-a545dcf3bc73?w=600&h=600&auto=format
+"
+                  alt="Sourdough"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Sourdough</h3>
+                <p class="h-product-desc">Crusty, tangy, 24h fermented</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$8.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">BESTSELLER</span>
+                <img
+                  src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=300&h=300&auto=format"
+                  alt="Chocolate Cake"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Chocolate Cake</h3>
+                <p class="h-product-desc">Rich ganache, 3 layers</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$24.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">CRISPY</span>
+                <img
+                  src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=300&h=300&auto=format"
+                  alt="Croissant"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Croissant (4pcs)</h3>
+                <p class="h-product-desc">French butter, golden layers</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$11.50</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">GIFT</span>
+                <img
+                  src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=300&h=300&auto=format"
+                  alt="Cookies"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Cookie Tin</h3>
+                <p class="h-product-desc">Assorted premium cookies</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$14.30</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">NEW</span>
+                <img
+                  src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=300&h=300&auto=format"
+                  alt="Cinnamon Roll"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Cinnamon Roll</h3>
+                <p class="h-product-desc">Cream cheese frosting</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$6.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 5.0</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- end container -->
+      </section>
+
+      <!-- ========== SECTION 2: SPECIAL OFFERS (HORIZONTAL) ========== -->
+      <section class="product-horizontal-section" style="background: #f3e5d8">
+        <div class="container">
+          <h2 class="section-heading">🎁 Special Offers</h2>
+
+          <div class="horizontal-scroll">
+            <!-- Card 1 -->
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">-20%</span>
+                <img
+                  src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=300&h=300&auto=format"
+                  alt="Baguette"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>French Baguette</h3>
+                <p class="h-product-desc">Crispy, golden, traditional</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$5.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">-15%</span>
+                <img
+                  src="https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=600&h=600&auto=format
+"
+                  alt="Brownie"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Walnut Brownie</h3>
+                <p class="h-product-desc">Fudgy, rich chocolate</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$4.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">COMBO</span>
+                <img
+                  src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=600&h=600&auto=format
+"
+                  alt="Donuts"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Donuts (6pcs)</h3>
+                <p class="h-product-desc">Assorted glazed</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$12.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.7</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">LIMITED</span>
+                <img
+                  src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=300&h=300&auto=format"
+                  alt="Apple Pie"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Apple Pie</h3>
+                <p class="h-product-desc">Cinnamon, lattice crust</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$18.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.9</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="h-product-card">
+              <div class="h-product-img">
+                <span class="product-badge">-10%</span>
+                <img
+                  src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=300&h=300&auto=format"
+                  alt="Muffins"
+                />
+              </div>
+              <div class="h-product-info">
+                <h3>Blueberry Muffins</h3>
+                <p class="h-product-desc">Moist, wild blueberries</p>
+                <div class="price-rating">
+                  <span class="h-product-price">$7.90</span>
+                  <span class="rating"><i class="fas fa-star"></i> 4.8</span>
+                </div>
+                <button class="add-to-cart-btn">
+                  <i class="fas fa-cart-plus"></i> Add
+                </button>
+              </div>
+            </div>
+          </div>
+          <!-- end horizontal scroll -->
+        </div>
+        <!-- end container -->
+      </section>
+
+      <!-- ========== CRAFT ORDER SECTION - UNIQUE ========== -->
+      <section class="craft-order" id="CraftOrder">
+        <div class="container">
+          <div class="craft-header">
+            <div class="tag">✧ BESPOKE ORDERING ✧</div>
+            <h2>Order Your <span>handcrafted bakery</span></h2>
+            <p>Every item made with patience and the finest ingredients</p>
+          </div>
+
+          <div class="craft-card">
+            <div class="craft-showcase">
+              <div class="craft-badge">
+                <i class="fas fa-leaf"></i> Freshly baked today
+              </div>
+
+              <div class="product-visual">
+                <img
+                  src="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format"
+                  alt="Artisan bread"
+                  id="craftProductImg"
+                />
+              </div>
+
+              <div class="product-details">
+                <h3 id="craftProductName">Farmhouse Sourdough</h3>
+                <div class="price-show" id="craftProductPrice">
+                  ₹220 <small>per loaf</small>
+                </div>
+                <div class="stock-status">
+                  <i class="fas fa-check-circle"></i> Freshly baked, ready to
+                  ship
+                </div>
+              </div>
+
+              <div class="quick-features">
+                <span><i class="fas fa-clock"></i> Baked at 5am</span>
+                <span><i class="fas fa-seedling"></i> Organic flour</span>
+                <span><i class="fas fa-heart"></i> Hand-shaped</span>
+              </div>
+            </div>
+
+            <div class="craft-form">
+              <div class="form-header-craft">
+                <h4>Tell us what you need</h4>
+                <p>
+                  <i class="fas fa-truck"></i> Free delivery in Hisar · 45 mins
+                </p>
+              </div>
+
+              <!-- Product Selection -->
+              <div class="selector-group">
+                <label class="selector-label"
+                  ><i class="fas fa-pie"></i> Choose your bread</label
+                >
+                <select
+                  class="craft-select"
+                  id="craftProductSelect"
+                  onchange="updateCraftProduct()"
+                >
+                  <option
+                    value="sourdough"
+                    data-price="220"
+                    data-img="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format"
+                  >
+                    Farmhouse Sourdough · ₹220
+                  </option>
+                  <option
+                    value="chocolate"
+                    data-price="420"
+                    data-img="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&auto=format"
+                  >
+                    Belgian Chocolate Cake · ₹420
+                  </option>
+                  <option
+                    value="croissant"
+                    data-price="180"
+                    data-img="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&auto=format"
+                  >
+                    Butter Croissant (4pcs) · ₹180
+                  </option>
+                  <option
+                    value="cookies"
+                    data-price="290"
+                    data-img="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&auto=format"
+                  >
+                    Artisan Cookie Box · ₹290
+                  </option>
+                  <option
+                    value="brownie"
+                    data-price="130"
+                    data-img="https://images.unsplash.com/photo-1587241323521-8b723eb0fdea?w=400&h=400&auto=format"
+                  >
+                    Walnut Brownie (2pcs) · ₹130
+                  </option>
+                </select>
+              </div>
+              <div class="craft-grid">
+                <div class="input-field">
+                  <label>Full name</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Amit Kumar"
+                    id="craftName"
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label>Phone</label>
+                  <input type="tel" placeholder="98765 43210" id="craftPhone" />
+                </div>
+
+                <div class="input-field">
+                  <label>Email (optional)</label>
+                  <input
+                    type="email"
+                    placeholder="name@example.com"
+                    id="craftEmail"
+                  />
+                </div>
+
+                <div class="input-field">
+                  <label>Delivery time</label>
+                  <select class="craft-select" id="craftTime">
+                    <option>Morning (8–12pm)</option>
+                    <option>Afternoon (12–4pm)</option>
+                    <option>Evening (4–8pm)</option>
+                    <option>Tomorrow morning</option>
+                  </select>
+                </div>
+
+                <div class="input-field full">
+                  <label>Delivery address</label>
+                  <input
+                    type="text"
+                    placeholder="House/Shop no., street, landmark"
+                    id="craftAddress"
+                  />
+                </div>
+              </div>
+
+              <!-- Quantity Selector -->
+              <div class="qty-minimal">
+                <span><i class="far fa-circle"></i> Quantity</span>
+                <div class="qty-controls">
+                  <button class="qty-btn" onclick="decreaseCraftQty()">
+                    −
+                  </button>
+                  <span class="qty-value" id="craftQty">1</span>
+                  <button class="qty-btn" onclick="increaseCraftQty()">
+                    +
+                  </button>
+                </div>
+              </div>
+
+              <!-- Special Instructions -->
+              <div class="input-field full">
+                <label>Anything special? (optional)</label>
+                <textarea
+                  placeholder="Birthday message, dietary needs, packaging request…"
+                  id="craftNote"
+                ></textarea>
+              </div>
+
+              <!-- Total -->
+              <div class="total-minimal">
+                <div class="total-row">
+                  <span>Subtotal</span>
+                  <span id="craftSubtotal">₹220</span>
+                </div>
+                <div class="total-row">
+                  <span>Delivery</span>
+                  <span id="craftDelivery">₹0</span>
+                </div>
+                <div class="total-row final">
+                  <span>To pay</span>
+                  <span id="craftTotal">₹220</span>
+                </div>
+              </div>
+
+              <!-- Submit Button -->
+              <button class="submit-minimal" onclick="placeCraftOrder()">
+                <span>Confirm order</span>
+                <i class="fas fa-arrow-right"></i>
+              </button>
+
+              <p
+                style="
+                  text-align: center;
+                  margin-top: 16px;
+                  color: #8f7a6a;
+                  font-size: 0.8rem;
+                "
+              >
+                <i class="fas fa-shield-alt"></i> Pay when you receive · No
+                hidden charges
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Success Modal -->
+        <div
+          class="overlay-minimal"
+          id="craftOverlay"
+          onclick="closeCraftModal()"
+        ></div>
+        <div class="modal-minimal" id="craftModal">
+          <i class="fas fa-check-circle"></i>
+          <h3>Order received</h3>
+          <p>We'll call within 10 minutes to confirm</p>
+          <div class="order-info">
+            <div
+              style="
+                display: flex;
+                justify-content: space-between;
+                margin-bottom: 5px;
+              "
+            >
+              <span>Order #:</span>
+              <span><strong id="craftOrderNumber">FB2026</strong></span>
+            </div>
+            <div style="display: flex; justify-content: space-between">
+              <span>Total:</span>
+              <span><strong id="craftModalTotal">₹220</strong></span>
+            </div>
+          </div>
+          <button onclick="closeCraftModal()">Continue</button>
+        </div>
+      </section>
+
+      <!-- JavaScript -->
+      <script>
+        let craftProduct = {
+          name: "Farmhouse Sourdough",
+          price: 220,
+          img: "https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format",
+        };
+        let craftQty = 1;
+
+        function updateCraftProduct() {
+          const select = document.getElementById("craftProductSelect");
+          const selected = select.options[select.selectedIndex];
+
+          craftProduct.name = selected.text.split(" · ")[0];
+          craftProduct.price = parseInt(selected.dataset.price);
+          craftProduct.img = selected.dataset.img;
+
+          document.getElementById("craftProductName").textContent =
+            craftProduct.name;
+          document.getElementById(
+            "craftProductPrice"
+          ).innerHTML = `₹${craftProduct.price} <small>per item</small>`;
+          document.getElementById("craftProductImg").src = craftProduct.img;
+
+          calculateCraftTotal();
+        }
+
+        function increaseCraftQty() {
+          if (craftQty < 10) {
+            craftQty++;
+            document.getElementById("craftQty").textContent = craftQty;
+            calculateCraftTotal();
+          }
+        }
+
+        function decreaseCraftQty() {
+          if (craftQty > 1) {
+            craftQty--;
+            document.getElementById("craftQty").textContent = craftQty;
+            calculateCraftTotal();
+          }
+        }
+
+        function calculateCraftTotal() {
+          const subtotal = craftProduct.price * craftQty;
+          const delivery = subtotal >= 500 ? 0 : 40;
+          const total = subtotal + delivery;
+
+          document.getElementById("craftSubtotal").textContent = "₹" + subtotal;
+          document.getElementById("craftDelivery").textContent =
+            delivery === 0 ? "Free" : "₹" + delivery;
+          document.getElementById("craftTotal").textContent = "₹" + total;
+        }
+
+        function placeCraftOrder() {
+          const name = document.getElementById("craftName").value;
+          const phone = document.getElementById("craftPhone").value;
+          const address = document.getElementById("craftAddress").value;
+
+          if (!name || !phone || !address) {
+            alert("Please fill in your name, phone and address");
+            return;
+          }
+
+          if (phone.length < 10) {
+            alert("Enter a valid 10‑digit phone number");
+            return;
+          }
+
+          const orderNum = "FB" + (Math.floor(Math.random() * 9000) + 1000);
+          document.getElementById("craftOrderNumber").textContent = orderNum;
+          document.getElementById("craftModalTotal").textContent =
+            document.getElementById("craftTotal").textContent;
+
+          document.getElementById("craftOverlay").classList.add("show");
+          document.getElementById("craftModal").classList.add("show");
+        }
+
+        function closeCraftModal() {
+          document.getElementById("craftOverlay").classList.remove("show");
+          document.getElementById("craftModal").classList.remove("show");
+        }
+
+        calculateCraftTotal();
+      </script>
+
+      <!-- ========== ABOUT SECTION  ========== -->
+      <section class="second-Hero" id="About">
+        <div class="container">
+          <div class="left-side-img">
+            <div class="image-wrapper">
+              <img
+                title="Our signature berry cake"
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=500&auto=format"
+                alt="sliced cake with fresh berries"
+              />
+            </div>
+            <div class="experience-badge">
+              <span class="years">8+</span>
+              <span class="text">Years of Love</span>
+            </div>
+          </div>
+          <div class="left-side">
+            <div class="about-subtitle">
+              <i class="fas fa-heart"></i> OUR STORY
+              <span>Since 2017</span>
+            </div>
+
+            <h2>Our Baking Story</h2>
+
+            <div class="highlight-text">
+              <i class="fas fa-quote-left"></i>
+              <p>
+                It started in a small home kitchen with a single sourdough
+                starter named "Bubbe." Today, FreshBaket is still that same
+                kitchen – just a little bigger. We bake in small batches, we
+                never use artificial flavours, and we believe that good bread
+                takes time. Every crust tells a story.
+              </p>
+            </div>
+
+            <div class="stats-grid">
+              <div class="stat-item">
+                <h3>8+</h3>
+                <p>years baking</p>
+              </div>
+              <div class="stat-item">
+                <h3>25+</h3>
+                <p>daily varieties</p>
+              </div>
+              <div class="stat-item">
+                <h3>850+</h3>
+                <p>happy regulars</p>
+              </div>
+              <div class="stat-item">
+                <h3>1500+</h3>
+                <p>weekly orders</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ========== GALLERY SECTION ========== -->
+      <section class="gallery-section" id="Gallery">
+        <div class="container">
+          <h2 class="section-heading">Our Sweet Gallery</h2>
+
+          <div class="gallery-grid">
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=600&h=600&auto=format"
+                alt="Fresh Muffins"
+              />
+              <div class="gallery-overlay">
+                <p>Fresh Muffins</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=600&auto=format"
+                alt="Baguettes"
+              />
+              <div class="gallery-overlay">
+                <p>Chocolate Brownies</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=600&h=600&auto=format"
+                alt="Croissants"
+              />
+              <div class="gallery-overlay">
+                <p>Butter Croissants</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=600&auto=format"
+                alt="Cakes"
+              />
+              <div class="gallery-overlay">
+                <p>Celebration Cakes</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&auto=format"
+                alt="Cookies"
+              />
+              <div class="gallery-overlay">
+                <p>Cookie Box</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1608198093002-ad4e005484ec?w=600&h=600&auto=format"
+                alt="Cinnamon Rolls"
+              />
+              <div class="gallery-overlay">
+                <p>Cinnamon Rolls</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1519915028121-7d3463d20b13?w=600&h=600&auto=format"
+                alt="Baguettes"
+              />
+              <div class="gallery-overlay">
+                <p>French Baguettes</p>
+              </div>
+            </div>
+
+            <div class="gallery-item">
+              <img
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=600&auto=format"
+                alt="Cookies"
+              />
+              <div class="gallery-overlay">
+                <p>Sourdough Loaf</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== TESTIMONIAL SECTION ========== -->
+      <section class="testimonial-section" id="Testimonials">
+        <div class="container">
+          <div class="section-header">
+            <h2>Customer Reviews</h2>
+            <p>What Hisar says about FreshBaket</p>
+          </div>
+
+          <div class="testimonial-grid">
+            <div class="testimonial-card featured">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/women/44.jpg"
+                  alt="Priya"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Best sourdough in Hisar! Fresh and crusty. Order every
+                weekend."
+              </p>
+              <div class="customer-info">
+                <h4>Priya Sharma</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jindal Chowk</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Rahul"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star-half-alt"></i>
+                <span>4.8</span>
+              </div>
+              <p class="testimonial-text">
+                "Croissants are flaky & buttery. Free delivery in Hisar is
+                great!"
+              </p>
+              <div class="customer-info">
+                <h4>Rahul Gupta</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Model Town</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/women/68.jpg"
+                  alt="Neha"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Birthday cake was beautiful & delicious. Everyone loved it!"
+              </p>
+              <div class="customer-info">
+                <h4>Neha Singh</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Urban Estate</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/men/75.jpg"
+                  alt="Amit"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Walnut brownie is perfect with evening tea. Regular customer!"
+              </p>
+              <div class="customer-info">
+                <h4>Amit Kumar</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Sector 13</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/women/90.jpg"
+                  alt="Sunita"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Clean bakery, friendly staff. Best near Jindal Chowk."
+              </p>
+              <div class="customer-info">
+                <h4>Sunita Rani</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Jindal Chowk</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/men/22.jpg"
+                  alt="Vikash"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Online ordering is so easy. Fresh bread delivered warm!"
+              </p>
+              <div class="customer-info">
+                <h4>Vikash Joshi</h4>
+                <p><i class="fas fa-map-marker-alt"></i> City Center</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/women/33.jpg"
+                  alt="Anjali"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Cookies are amazing. Will order again!"
+              </p>
+              <div class="customer-info">
+                <h4>Anjali Mehta</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Hisar Cantt</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+            <div class="testimonial-card">
+              <div class="quote-icon">"</div>
+              <div class="customer-img">
+                <img
+                  src="https://randomuser.me/api/portraits/men/55.jpg"
+                  alt="Rajesh"
+                />
+              </div>
+              <div class="rating">
+                <i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i><i class="fas fa-star"></i
+                ><i class="fas fa-star"></i>
+                <span>5.0</span>
+              </div>
+              <p class="testimonial-text">
+                "Fresh bread daily. My go-to bakery!"
+              </p>
+              <div class="customer-info">
+                <h4>Rajesh Kumar</h4>
+                <p><i class="fas fa-map-marker-alt"></i> Defence Colony</p>
+                <div class="verified-badge">
+                  <i class="fas fa-check-circle"></i> Verified
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-stats">
+            <div class="stat-item">
+              <h3>2000+</h3>
+              <p><i class="fas fa-smile"></i> Happy</p>
+            </div>
+            <div class="stat-item">
+              <h3>4.9</h3>
+              <p><i class="fas fa-star"></i> Rating</p>
+            </div>
+            <div class="stat-item">
+              <h3>500+</h3>
+              <p><i class="fas fa-check-circle"></i> Reviews</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== CONTACT SECTION - HORIZONTAL ========== -->
+      <section class="contact-section" id="Contact">
+        <div class="container">
+          <h2 class="section-title">Contact Us</h2>
+
+          <div class="contact-wrapper">
+            <div class="contact-info">
+              <div class="bakery-tag">
+                <i class="fas fa-store"></i> FreshBaket - Hisar
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-text">
+                  <h4>Visit Our Bakery</h4>
+                  <p>
+                    Shop 7-8, Jindal Chowk, Hisar<br />
+                    Haryana - 125001
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-phone-alt"></i>
+                </div>
+                <div class="info-text">
+                  <h4>Call Us</h4>
+                  <p>
+                    +91 98765 43210<br />
+                    +91 1662 123456
+                  </p>
+                </div>
+              </div>
+
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-envelope"></i>
+                </div>
+                <div class="info-text">
+                  <h4>Email</h4>
+                  <p>hisar@freshbaket.com</p>
+                </div>
+              </div>
+
+              <!-- Hours -->
+              <div class="info-item">
+                <div class="info-icon">
+                  <i class="fas fa-clock"></i>
+                </div>
+                <div class="info-text">
+                  <h4>Opening Hours</h4>
+                  <p>
+                    Mon-Sat: 8am - 9pm<br />
+                    Sunday: 9am - 6pm
+                  </p>
+                </div>
+              </div>
+              <div class="map-box">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3490.887183234578!2d75.723987!3d29.149187!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3912330c0f0b3b0b%3A0x8b5b5f5f5f5f5f5f!2sJindal%20Chowk%2C%20Hisar%2C%20Haryana%20125001!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin"
+                  allowfullscreen=""
+                  loading="lazy"
+                >
+                </iframe>
+              </div>
+            </div>
+
+            <div class="contact-form">
+              <div class="form-header">
+                <h3>Send Message</h3>
+                <p>We reply within 24 hours</p>
+              </div>
+
+              <form id="contactForm">
+                <div class="form-group">
+                  <input type="text" placeholder="Your Name" required />
+                </div>
+
+                <div class="form-group">
+                  <input type="email" placeholder="Email Address" required />
+                </div>
+
+                <div class="form-group">
+                  <input type="tel" placeholder="Phone (optional)" />
+                </div>
+
+                <div class="form-group">
+                  <textarea placeholder="Your Message..." required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">
+                  Send Message <i class="fas fa-paper-plane"></i>
+                </button>
+
+                <div class="success-message" id="successMsg">
+                  <i class="fas fa-check-circle"></i> Thanks! We'll reply soon.
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <script>
+          document
+            .getElementById("contactForm")
+            ?.addEventListener("submit", function (e) {
+              e.preventDefault();
+              document.getElementById("successMsg").classList.add("show");
+              setTimeout(() => {
+                document.getElementById("successMsg").classList.remove("show");
+                this.reset();
+              }, 3000);
+            });
+        </script>
+      </section>
+
+      <!-- ========== FOOTER ========== -->
+      <footer class="footer">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-logo">
+              <img src="/assets/bread (1).png" alt="FreshBaket" />
+              <p>
+                FreshBaket is more than a bakery – it's a tradition of warmth,
+                quality, and happiness baked fresh daily since 2017.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-pinterest"></i></a>
+              </div>
+            </div>
+            <div class="footer-links">
+              <h4>Quick Links</h4>
+              <ul>
+                <li><a href="#Home">Home</a></li>
+                <li><a href="#About">About Us</a></li>
+                <li><a href="#Product">Products</a></li>
+                <li><a href="#Gallery">Gallery</a></li>
+                <li><a href="#Contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="footer-links">
+              <h4>Information</h4>
+              <ul>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+                <li><a href="#">Shipping Info</a></li>
+                <li><a href="#">Returns</a></li>
+                <li><a href="#">FAQ</a></li>
+              </ul>
+            </div>
+            <div class="footer-newsletter">
+              <h4>Newsletter</h4>
+              <p>
+                Subscribe to get special offers, free giveaways, and baking
+                tips.
+              </p>
+              <div class="newsletter-input">
+                <input type="email" placeholder="Your email" />
+                <button><i class="fas fa-paper-plane"></i></button>
+              </div>
+            </div>
+          </div>
+          <div class="footer-bottom">
+            <p>
+              &copy; 2026 FreshBaket. All rights reserved. | Made with
+              <i class="fas fa-heart" style="color: #d2691e"></i> for Aman Verma
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>

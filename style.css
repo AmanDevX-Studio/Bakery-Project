@@ -459,10 +459,10 @@ header {
 .cards-section {
   display: flex;
   background-color: var(--bg-beige);
-  padding: 2rem 1rem;
+  padding: 1rem 1rem;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 1rem;
+  gap: 2rem;
 }
 
 .card {

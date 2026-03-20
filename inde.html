@@ -477,234 +477,806 @@
       </section>
 
       <!-- ========== CRAFT ORDER SECTION - UNIQUE ========== -->
-      <section class="craft-order" id="CraftOrder">
-        <div class="container">
-          <div class="craft-header">
-            <div class="tag">✧ BESPOKE ORDERING ✧</div>
-            <h2>Order Your <span>handcrafted bakery</span></h2>
-            <p>Every item made with patience and the finest ingredients</p>
+     <section class="craft-order" id="CraftOrder">
+  <style>
+    /* ========== COMPLETE STYLES FOR BAKERY ORDER SECTION ========== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .craft-order {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, sans-serif;
+      background: linear-gradient(145deg, #fff9f5 0%, #fef7f0 100%);
+      padding: 4rem 1.5rem;
+    }
+
+    .container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+
+    /* Header Styles */
+    .craft-header {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .tag {
+      display: inline-block;
+      background: #f3e3d5;
+      color: #b45f2b;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      padding: 0.3rem 1rem;
+      border-radius: 40px;
+      margin-bottom: 1rem;
+      backdrop-filter: blur(2px);
+    }
+
+    .craft-header h2 {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: #2c241a;
+      margin-bottom: 0.5rem;
+    }
+
+    .craft-header h2 span {
+      background: linear-gradient(135deg, #c17b4b, #9b4b2c);
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .craft-header p {
+      color: #7f6b5c;
+      font-size: 1rem;
+    }
+
+    /* Main Card */
+    .craft-card {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 2rem;
+      background: white;
+      border-radius: 2.5rem;
+      box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.2), 0 4px 12px rgba(0, 0, 0, 0.05);
+      overflow: hidden;
+      transition: all 0.3s ease;
+    }
+
+    /* Left Showcase */
+    .craft-showcase {
+      background: #fefaf6;
+      padding: 2rem 1.8rem;
+      position: relative;
+      border-right: 1px solid #f0e4d8;
+    }
+
+    .craft-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #e9dbd0;
+      color: #7a4a2a;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 0.3rem 1rem;
+      border-radius: 30px;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-visual {
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .product-visual img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 48px;
+      box-shadow: 0 20px 30px -12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+
+    .product-visual img:hover {
+      transform: scale(1.02);
+    }
+
+    .product-details h3 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #2c241a;
+      margin-bottom: 0.3rem;
+    }
+
+    .price-show {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #c46b3a;
+      margin: 0.5rem 0;
+    }
+
+    .price-show small {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: #9b7c66;
+    }
+
+    .stock-status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: #2e7d32;
+      font-size: 0.8rem;
+      font-weight: 500;
+      background: #e8f5e9;
+      display: inline-flex;
+      padding: 0.2rem 0.8rem;
+      border-radius: 30px;
+      margin: 0.5rem 0;
+    }
+
+    .quick-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.8rem;
+      border-top: 1px dashed #e2d4ca;
+      padding-top: 1.5rem;
+    }
+
+    .quick-features span {
+      font-size: 0.8rem;
+      color: #8b6f58;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #f9f0e8;
+      padding: 0.3rem 0.8rem;
+      border-radius: 40px;
+    }
+
+    /* Right Form */
+    .craft-form {
+      padding: 2rem 2rem 2rem 1.5rem;
+      background: white;
+    }
+
+    .form-header-craft h4 {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: #1f1a15;
+    }
+
+    .form-header-craft p {
+      color: #b47c54;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      margin-bottom: 1.5rem;
+    }
+
+    .selector-group {
+      margin-bottom: 1.5rem;
+    }
+
+    .selector-label {
+      display: block;
+      font-weight: 600;
+      color: #3e2e22;
+      margin-bottom: 8px;
+      font-size: 0.9rem;
+    }
+
+    .craft-select {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 60px;
+      border: 1.5px solid #e9dbd0;
+      background: white;
+      font-size: 0.9rem;
+      color: #2c241a;
+      transition: 0.2s;
+      cursor: pointer;
+      outline: none;
+    }
+
+    .craft-select:focus {
+      border-color: #c46b3a;
+      box-shadow: 0 0 0 3px rgba(196, 107, 58, 0.1);
+    }
+
+    .craft-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .input-field.full {
+      grid-column: span 2;
+    }
+
+    .input-field label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: #5a4534;
+    }
+
+    .input-field input,
+    .input-field textarea {
+      padding: 12px 14px;
+      border-radius: 20px;
+      border: 1.5px solid #efdfd2;
+      background: #fefcf9;
+      font-family: inherit;
+      transition: 0.2s;
+      font-size: 0.9rem;
+    }
+
+    .input-field input:focus,
+    .input-field textarea:focus {
+      outline: none;
+      border-color: #c46b3a;
+      background: white;
+    }
+
+    .input-field textarea {
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    /* Quantity */
+    .qty-minimal {
+      background: #fef7f0;
+      padding: 0.8rem 1rem;
+      border-radius: 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 1.2rem 0;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      background: white;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      border: 1px solid #e2cfbf;
+    }
+
+    .qty-btn {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      font-weight: 600;
+      width: 32px;
+      cursor: pointer;
+      color: #b45f2b;
+      transition: 0.2s;
+    }
+
+    .qty-btn:hover {
+      color: #8b3e17;
+      transform: scale(1.1);
+    }
+
+    .qty-value {
+      font-weight: 700;
+      font-size: 1.2rem;
+      min-width: 28px;
+      text-align: center;
+    }
+
+    /* Total */
+    .total-minimal {
+      background: #faf4ed;
+      border-radius: 28px;
+      padding: 1rem 1.5rem;
+      margin: 1rem 0;
+    }
+
+    .total-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 6px 0;
+      font-size: 0.95rem;
+      color: #4a3727;
+    }
+
+    .total-row.final {
+      font-weight: 800;
+      font-size: 1.2rem;
+      border-top: 1px solid #e0cfc0;
+      margin-top: 6px;
+      padding-top: 10px;
+      color: #c46b3a;
+    }
+
+    /* Submit */
+    .submit-minimal {
+      width: 100%;
+      background: linear-gradient(105deg, #c2703e, #a75428);
+      border: none;
+      padding: 14px 0;
+      border-radius: 50px;
+      color: white;
+      font-weight: 700;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: 0.2s;
+      box-shadow: 0 5px 12px rgba(182, 85, 33, 0.3);
+    }
+
+    .submit-minimal:hover {
+      transform: translateY(-2px);
+      background: linear-gradient(105deg, #b35f2c, #95451e);
+      box-shadow: 0 12px 20px -8px rgba(160, 70, 25, 0.4);
+    }
+
+    /* Modal & Overlay */
+    .overlay-minimal {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      backdrop-filter: blur(3px);
+      z-index: 1000;
+      display: none;
+    }
+
+    .modal-minimal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 2rem 1.8rem;
+      border-radius: 2rem;
+      width: 90%;
+      max-width: 380px;
+      text-align: center;
+      z-index: 1001;
+      display: none;
+      box-shadow: 0 30px 40px rgba(0, 0, 0, 0.2);
+      animation: fadeSlide 0.25s ease;
+    }
+
+    @keyframes fadeSlide {
+      from {
+        opacity: 0;
+        transform: translate(-50%, -45%);
+      }
+      to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .modal-minimal i {
+      font-size: 3.5rem;
+      color: #4caf50;
+      margin-bottom: 0.8rem;
+    }
+
+    .modal-minimal h3 {
+      font-size: 1.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .order-info {
+      background: #f8f2ec;
+      padding: 0.8rem;
+      border-radius: 20px;
+      margin: 1rem 0;
+      text-align: left;
+    }
+
+    .modal-minimal button {
+      background: #c2703e;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 40px;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      width: 100%;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .craft-card {
+        grid-template-columns: 1fr;
+        border-radius: 2rem;
+      }
+      .craft-showcase {
+        border-right: none;
+        border-bottom: 1px solid #f0e4d8;
+        text-align: center;
+      }
+      .craft-form {
+        padding: 1.8rem;
+      }
+      .craft-header h2 {
+        font-size: 2rem;
+      }
+    }
+
+    @media (max-width: 550px) {
+      .craft-grid {
+        grid-template-columns: 1fr;
+      }
+      .input-field.full {
+        grid-column: span 1;
+      }
+      .craft-order {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+
+  <div class="container">
+    <div class="craft-header">
+      <div class="tag">✧ BESPOKE ORDERING ✧</div>
+      <h2>Order Your <span>handcrafted bakery</span></h2>
+      <p>Every item made with patience and the finest ingredients</p>
+    </div>
+
+    <div class="craft-card">
+      <div class="craft-showcase">
+        <div class="craft-badge">
+          <i class="fas fa-leaf"></i> Freshly baked today
+        </div>
+        <div class="product-visual">
+          <img src="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format" alt="Artisan bread" id="craftProductImg" />
+        </div>
+        <div class="product-details">
+          <h3 id="craftProductName">Farmhouse Sourdough</h3>
+          <div class="price-show" id="craftProductPrice">₹220 <small>per loaf</small></div>
+          <div class="stock-status"><i class="fas fa-check-circle"></i> Freshly baked, ready to ship</div>
+        </div>
+        <div class="quick-features">
+          <span><i class="fas fa-clock"></i> Baked at 5am</span>
+          <span><i class="fas fa-seedling"></i> Organic flour</span>
+          <span><i class="fas fa-heart"></i> Hand-shaped</span>
+        </div>
+      </div>
+
+      <div class="craft-form">
+        <div class="form-header-craft">
+          <h4>Tell us what you need</h4>
+          <p><i class="fas fa-truck"></i> Free delivery in Hisar · 45 mins</p>
+        </div>
+
+        <!-- Product Selection -->
+        <div class="selector-group">
+          <label class="selector-label"><i class="fas fa-pie"></i> Choose your bread</label>
+          <select class="craft-select" id="craftProductSelect">
+            <option value="sourdough" data-price="220" data-img="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format">Farmhouse Sourdough · ₹220</option>
+            <option value="chocolate" data-price="420" data-img="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&auto=format">Belgian Chocolate Cake · ₹420</option>
+            <option value="croissant" data-price="180" data-img="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&auto=format">Butter Croissant (4pcs) · ₹180</option>
+            <option value="cookies" data-price="290" data-img="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&auto=format">Artisan Cookie Box · ₹290</option>
+            <option value="brownie" data-price="130" data-img="https://images.unsplash.com/photo-1587241323521-8b723eb0fdea?w=400&h=400&auto=format">Walnut Brownie (2pcs) · ₹130</option>
+          </select>
+        </div>
+
+        <div class="craft-grid">
+          <div class="input-field">
+            <label>Full name *</label>
+            <input type="text" placeholder="e.g. Amit Kumar" id="craftName" />
           </div>
-
-          <div class="craft-card">
-            <div class="craft-showcase">
-              <div class="craft-badge">
-                <i class="fas fa-leaf"></i> Freshly baked today
-              </div>
-
-              <div class="product-visual">
-                <img
-                  src="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format"
-                  alt="Artisan bread"
-                  id="craftProductImg"
-                />
-              </div>
-
-              <div class="product-details">
-                <h3 id="craftProductName">Farmhouse Sourdough</h3>
-                <div class="price-show" id="craftProductPrice">
-                  ₹220 <small>per loaf</small>
-                </div>
-                <div class="stock-status">
-                  <i class="fas fa-check-circle"></i> Freshly baked, ready to
-                  ship
-                </div>
-              </div>
-
-              <div class="quick-features">
-                <span><i class="fas fa-clock"></i> Baked at 5am</span>
-                <span><i class="fas fa-seedling"></i> Organic flour</span>
-                <span><i class="fas fa-heart"></i> Hand-shaped</span>
-              </div>
-            </div>
-
-            <div class="craft-form">
-              <div class="form-header-craft">
-                <h4>Tell us what you need</h4>
-                <p>
-                  <i class="fas fa-truck"></i> Free delivery in Hisar · 45 mins
-                </p>
-              </div>
-
-              <!-- Product Selection -->
-              <div class="selector-group">
-                <label class="selector-label"
-                  ><i class="fas fa-pie"></i> Choose your bread</label
-                >
-                <select
-                  class="craft-select"
-                  id="craftProductSelect"
-                  onchange="updateCraftProduct()"
-                >
-                  <option
-                    value="sourdough"
-                    data-price="220"
-                    data-img="https://images.unsplash.com/photo-1585478259715-4d3b4d1c3f9d?w=400&h=400&auto=format"
-                  >
-                    Farmhouse Sourdough · ₹220
-                  </option>
-                  <option
-                    value="chocolate"
-                    data-price="420"
-                    data-img="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=400&auto=format"
-                  >
-                    Belgian Chocolate Cake · ₹420
-                  </option>
-                  <option
-                    value="croissant"
-                    data-price="180"
-                    data-img="https://images.unsplash.com/photo-1555507036-ab1f4038808a?w=400&h=400&auto=format"
-                  >
-                    Butter Croissant (4pcs) · ₹180
-                  </option>
-                  <option
-                    value="cookies"
-                    data-price="290"
-                    data-img="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=400&h=400&auto=format"
-                  >
-                    Artisan Cookie Box · ₹290
-                  </option>
-                  <option
-                    value="brownie"
-                    data-price="130"
-                    data-img="https://images.unsplash.com/photo-1587241323521-8b723eb0fdea?w=400&h=400&auto=format"
-                  >
-                    Walnut Brownie (2pcs) · ₹130
-                  </option>
-                </select>
-              </div>
-              <div class="craft-grid">
-                <div class="input-field">
-                  <label>Full name</label>
-                  <input
-                    type="text"
-                    placeholder="e.g. Amit Kumar"
-                    id="craftName"
-                  />
-                </div>
-
-                <div class="input-field">
-                  <label>Phone</label>
-                  <input type="tel" placeholder="98765 43210" id="craftPhone" />
-                </div>
-
-                <div class="input-field">
-                  <label>Email (optional)</label>
-                  <input
-                    type="email"
-                    placeholder="name@example.com"
-                    id="craftEmail"
-                  />
-                </div>
-
-                <div class="input-field">
-                  <label>Delivery time</label>
-                  <select class="craft-select" id="craftTime">
-                    <option>Morning (8–12pm)</option>
-                    <option>Afternoon (12–4pm)</option>
-                    <option>Evening (4–8pm)</option>
-                    <option>Tomorrow morning</option>
-                  </select>
-                </div>
-
-                <div class="input-field full">
-                  <label>Delivery address</label>
-                  <input
-                    type="text"
-                    placeholder="House/Shop no., street, landmark"
-                    id="craftAddress"
-                  />
-                </div>
-              </div>
-
-              <!-- Quantity Selector -->
-              <div class="qty-minimal">
-                <span><i class="far fa-circle"></i> Quantity</span>
-                <div class="qty-controls">
-                  <button class="qty-btn" onclick="decreaseCraftQty()">
-                    −
-                  </button>
-                  <span class="qty-value" id="craftQty">1</span>
-                  <button class="qty-btn" onclick="increaseCraftQty()">
-                    +
-                  </button>
-                </div>
-              </div>
-
-              <!-- Special Instructions -->
-              <div class="input-field full">
-                <label>Anything special? (optional)</label>
-                <textarea
-                  placeholder="Birthday message, dietary needs, packaging request…"
-                  id="craftNote"
-                ></textarea>
-              </div>
-
-              <!-- Total -->
-              <div class="total-minimal">
-                <div class="total-row">
-                  <span>Subtotal</span>
-                  <span id="craftSubtotal">₹220</span>
-                </div>
-                <div class="total-row">
-                  <span>Delivery</span>
-                  <span id="craftDelivery">₹0</span>
-                </div>
-                <div class="total-row final">
-                  <span>To pay</span>
-                  <span id="craftTotal">₹220</span>
-                </div>
-              </div>
-
-              <!-- Submit Button -->
-              <button class="submit-minimal" onclick="placeCraftOrder()">
-                <span>Confirm order</span>
-                <i class="fas fa-arrow-right"></i>
-              </button>
-
-              <p
-                style="
-                  text-align: center;
-                  margin-top: 16px;
-                  color: #8f7a6a;
-                  font-size: 0.8rem;
-                "
-              >
-                <i class="fas fa-shield-alt"></i> Pay when you receive · No
-                hidden charges
-              </p>
-            </div>
+          <div class="input-field">
+            <label>Phone *</label>
+            <input type="tel" placeholder="98765 43210" id="craftPhone" />
+          </div>
+          <div class="input-field">
+            <label>Email (optional)</label>
+            <input type="email" placeholder="name@example.com" id="craftEmail" />
+          </div>
+          <div class="input-field">
+            <label>Delivery time</label>
+            <select class="craft-select" id="craftTime">
+              <option>Morning (8–12pm)</option>
+              <option>Afternoon (12–4pm)</option>
+              <option>Evening (4–8pm)</option>
+              <option>Tomorrow morning</option>
+            </select>
+          </div>
+          <div class="input-field full">
+            <label>Delivery address *</label>
+            <input type="text" placeholder="House/Shop no., street, landmark" id="craftAddress" />
           </div>
         </div>
 
-        <!-- Success Modal -->
-        <div
-          class="overlay-minimal"
-          id="craftOverlay"
-          onclick="closeCraftModal()"
-        ></div>
-        <div class="modal-minimal" id="craftModal">
-          <i class="fas fa-check-circle"></i>
-          <h3>Order received</h3>
-          <p>We'll call within 10 minutes to confirm</p>
-          <div class="order-info">
-            <div
-              style="
-                display: flex;
-                justify-content: space-between;
-                margin-bottom: 5px;
-              "
-            >
-              <span>Order #:</span>
-              <span><strong id="craftOrderNumber">FB2026</strong></span>
-            </div>
-            <div style="display: flex; justify-content: space-between">
-              <span>Total:</span>
-              <span><strong id="craftModalTotal">₹220</strong></span>
-            </div>
+        <!-- Quantity Selector -->
+        <div class="qty-minimal">
+          <span><i class="far fa-circle"></i> Quantity</span>
+          <div class="qty-controls">
+            <button class="qty-btn" id="decrQtyBtn">−</button>
+            <span class="qty-value" id="craftQty">1</span>
+            <button class="qty-btn" id="incrQtyBtn">+</button>
           </div>
-          <button onclick="closeCraftModal()">Continue</button>
         </div>
-      </section>
+
+        <!-- Special Instructions -->
+        <div class="input-field full">
+          <label>Anything special? (optional)</label>
+          <textarea placeholder="Birthday message, dietary needs, packaging request…" id="craftNote"></textarea>
+        </div>
+
+        <!-- Total -->
+        <div class="total-minimal">
+          <div class="total-row"><span>Subtotal</span><span id="craftSubtotal">₹220</span></div>
+          <div class="total-row"><span>Delivery</span><span id="craftDelivery">₹0</span></div>
+          <div class="total-row final"><span>To pay</span><span id="craftTotal">₹220</span></div>
+        </div>
+
+        <!-- Submit Button -->
+        <button class="submit-minimal" id="confirmOrderBtn">
+          <span>Confirm order</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+        <p style="text-align: center; margin-top: 16px; color: #8f7a6a; font-size: 0.8rem;">
+          <i class="fas fa-shield-alt"></i> Pay when you receive · No hidden charges
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="overlay-minimal" id="craftOverlay"></div>
+  <div class="modal-minimal" id="craftModal">
+    <i class="fas fa-check-circle"></i>
+    <h3>Order received</h3>
+    <p>We'll call within 10 minutes to confirm</p>
+    <div class="order-info">
+      <div style="display: flex; justify-content: space-between; margin-bottom: 5px;">
+        <span>Order #:</span>
+        <span><strong id="craftOrderNumber">FB2026</strong></span>
+      </div>
+      <div style="display: flex; justify-content: space-between">
+        <span>Total:</span>
+        <span><strong id="craftModalTotal">₹220</strong></span>
+      </div>
+    </div>
+    <button id="closeModalBtn">Continue</button>
+  </div>
+</section>
+
+<script>
+  (function() {
+    // ---------- DOM elements ----------
+    const productSelect = document.getElementById('craftProductSelect');
+    const productImg = document.getElementById('craftProductImg');
+    const productNameSpan = document.getElementById('craftProductName');
+    const productPriceSpan = document.getElementById('craftProductPrice');
+    const qtySpan = document.getElementById('craftQty');
+    const subtotalSpan = document.getElementById('craftSubtotal');
+    const deliverySpan = document.getElementById('craftDelivery');
+    const totalSpan = document.getElementById('craftTotal');
+    const modalTotalSpan = document.getElementById('craftModalTotal');
+    const orderNumberSpan = document.getElementById('craftOrderNumber');
+    const overlay = document.getElementById('craftOverlay');
+    const modal = document.getElementById('craftModal');
+    
+    // Inputs
+    const nameInput = document.getElementById('craftName');
+    const phoneInput = document.getElementById('craftPhone');
+    const addressInput = document.getElementById('craftAddress');
+    const emailInput = document.getElementById('craftEmail');
+    const timeSelect = document.getElementById('craftTime');
+    const noteTextarea = document.getElementById('craftNote');
+    
+    // Buttons
+    const decrBtn = document.getElementById('decrQtyBtn');
+    const incrBtn = document.getElementById('incrQtyBtn');
+    const confirmBtn = document.getElementById('confirmOrderBtn');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    
+    // Helper: get current product data
+    function getSelectedProduct() {
+      const selected = productSelect.options[productSelect.selectedIndex];
+      const price = parseInt(selected.getAttribute('data-price'), 10);
+      const imgUrl = selected.getAttribute('data-img');
+      const fullText = selected.textContent;
+      const name = fullText.split(' · ')[0];
+      return { price, imgUrl, name };
+    }
+    
+    // Update showcase & prices
+    function updateCraftProduct() {
+      const { price, imgUrl, name } = getSelectedProduct();
+      if (productImg) productImg.src = imgUrl;
+      if (productNameSpan) productNameSpan.textContent = name;
+      if (productPriceSpan) productPriceSpan.innerHTML = `₹${price} <small>per unit</small>`;
+      updateTotals();
+    }
+    
+    // Get current quantity
+    function getCurrentQty() {
+      return parseInt(qtySpan.textContent, 10);
+    }
+    
+    // Update subtotal, delivery (free) and total
+    function updateTotals() {
+      const { price } = getSelectedProduct();
+      const qty = getCurrentQty();
+      const subtotal = price * qty;
+      const delivery = 0;
+      const total = subtotal + delivery;
+      if (subtotalSpan) subtotalSpan.textContent = `₹${subtotal}`;
+      if (deliverySpan) deliverySpan.textContent = `₹${delivery}`;
+      if (totalSpan) totalSpan.textContent = `₹${total}`;
+      if (modalTotalSpan) modalTotalSpan.textContent = `₹${total}`;
+    }
+    
+    // Quantity handlers
+    function increaseQty() {
+      let qty = getCurrentQty();
+      qty++;
+      qtySpan.textContent = qty;
+      updateTotals();
+    }
+    
+    function decreaseQty() {
+      let qty = getCurrentQty();
+      if (qty > 1) {
+        qty--;
+        qtySpan.textContent = qty;
+        updateTotals();
+      }
+    }
+    
+    // Generate order number (FB + timestamp + random)
+    function generateOrderNumber() {
+      const date = new Date();
+      const y = date.getFullYear().toString().slice(-2);
+      const d = date.getDate();
+      const rand = Math.floor(Math.random() * 900 + 100);
+      return `FB${y}${d}${rand}`;
+    }
+    
+    // Validate mandatory fields
+    function validateForm() {
+      const name = nameInput ? nameInput.value.trim() : '';
+      const phone = phoneInput ? phoneInput.value.trim() : '';
+      const address = addressInput ? addressInput.value.trim() : '';
+      
+      if (name === '') {
+        alert('❌ Please enter your full name.');
+        nameInput.focus();
+        return false;
+      }
+      if (phone === '') {
+        alert('❌ Please enter your phone number.');
+        phoneInput.focus();
+        return false;
+      }
+      const phoneDigits = phone.replace(/\D/g, '');
+      if (phoneDigits.length !== 10 || !/^[6-9]\d{9}$/.test(phoneDigits)) {
+        alert('❌ Please enter a valid 10-digit mobile number.');
+        phoneInput.focus();
+        return false;
+      }
+      if (address === '') {
+        alert('❌ Please enter delivery address.');
+        addressInput.focus();
+        return false;
+      }
+      return true;
+    }
+    
+    // Show order success modal
+    function showModal(orderNumber, totalAmount) {
+      if (orderNumberSpan) orderNumberSpan.textContent = orderNumber;
+      if (modalTotalSpan) modalTotalSpan.textContent = totalAmount;
+      if (overlay) overlay.style.display = 'block';
+      if (modal) modal.style.display = 'block';
+      document.body.style.overflow = 'hidden';
+    }
+    
+    // Close modal
+    function closeModal() {
+      if (overlay) overlay.style.display = 'none';
+      if (modal) modal.style.display = 'none';
+      document.body.style.overflow = '';
+    }
+    
+    // Reset form after order (optional but nice)
+    function resetFormAfterOrder() {
+      if (nameInput) nameInput.value = '';
+      if (phoneInput) phoneInput.value = '';
+      if (emailInput) emailInput.value = '';
+      if (addressInput) addressInput.value = '';
+      if (noteTextarea) noteTextarea.value = '';
+      if (timeSelect) timeSelect.selectedIndex = 0;
+      // reset quantity to 1 and first product
+      if (qtySpan) qtySpan.textContent = '1';
+      if (productSelect) productSelect.selectedIndex = 0;
+      updateCraftProduct();
+      updateTotals();
+    }
+    
+    // Main order placement
+    function placeOrder() {
+      if (!validateForm()) return;
+      
+      const { name: productName } = getSelectedProduct();
+      const qty = getCurrentQty();
+      const totalValue = totalSpan ? totalSpan.textContent : '₹0';
+      const customerName = nameInput.value.trim();
+      const phone = phoneInput.value.trim();
+      const address = addressInput.value.trim();
+      const timeSlot = timeSelect ? timeSelect.value : '';
+      const email = emailInput ? emailInput.value.trim() : '';
+      const note = noteTextarea ? noteTextarea.value.trim() : '';
+      
+      const orderNumber = generateOrderNumber();
+      
+      // For console / record (you can also store or send to backend)
+      console.log('🧾 NEW ORDER:', {
+        orderNumber,
+        product: productName,
+        quantity: qty,
+        total: totalValue,
+        customer: customerName,
+        phone,
+        address,
+        timeSlot,
+        email,
+        note
+      });
+      
+      // Optional: show alert simulation (but modal is better)
+      showModal(orderNumber, totalValue);
+      
+      // Reset form fields after modal closes (we'll do reset after close)
+      // We attach a one-time reset after modal closes
+      const resetHandler = function() {
+        resetFormAfterOrder();
+        closeModalBtn.removeEventListener('click', resetHandler);
+        overlay.removeEventListener('click', resetHandler);
+      };
+      closeModalBtn.addEventListener('click', resetHandler, { once: true });
+      overlay.addEventListener('click', resetHandler, { once: true });
+    }
+    
+    // ---------- Event binding ----------
+    if (productSelect) productSelect.addEventListener('change', updateCraftProduct);
+    if (incrBtn) incrBtn.addEventListener('click', increaseQty);
+    if (decrBtn) decrBtn.addEventListener('click', decreaseQty);
+    if (confirmBtn) confirmBtn.addEventListener('click', placeOrder);
+    if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+    if (overlay) overlay.addEventListener('click', closeModal);
+    
+    // Initialize values
+    updateCraftProduct();
+    // Ensure delivery is ₹0
+    if (deliverySpan) deliverySpan.textContent = '₹0';
+    updateTotals();
+  })();
+</script>
+</section>
 
 
       <!-- ========== ABOUT SECTION  ========== -->
